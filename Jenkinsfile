@@ -2,10 +2,20 @@ pipeline {
    agent any
 
    stages {
-      stage('Hello') {
+      stage('Preperation') {
          steps {
-            echo 'hello hello'
+            sh 'chmod +x testscript.sh'
          }
       }
+      stage('Run') {
+	 steps {
+	    sh './testscript.sh >output.txt'	
+	 }
+     }
+     stage ('Archive'){
+	steps {
+           archiveArtifacts 'output.txt'
+	}
+    }
    }
 }
