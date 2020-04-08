@@ -4,12 +4,12 @@ pipeline {
    stages {
       stage('Preperation') {
          steps {
-            sh 'chmod +x testscript.sh'
+            echo 'Preparing...'
          }
       }
       stage('Run') {
 	 steps {
-	    sh './testscript.sh >>output.txt'	
+	    sh 'make'	
 	 }
      }
    }
