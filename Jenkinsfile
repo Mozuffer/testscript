@@ -9,13 +9,8 @@ pipeline {
       }
       stage('Run') {
 	 steps {
-	    sh './testscript.sh >output.txt'	
+	    sh './testscript.sh'	
 	 }
      }
-     stage ('Archive'){
-	steps {
-           archiveArtifacts 'output.txt'
-	}
-    }
    }
 }
