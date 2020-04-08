@@ -9,7 +9,7 @@ pipeline {
       }
       stage('Run') {
 	 steps {
-	    sh './testscript.sh'	
+	    sh './testscript.sh >>output.txt'	
 	 }
      }
    }
